@@ -15,14 +15,30 @@ and mac versions might be supported someday. Access with username and password i
 
 # Contact
 basecase.fm@gmail.com
-feel free to make requests for features or report bugs...im just doing this for fun..:>
+feel free to make requests for features or report bugs...im just doing this for fun..   :]
 
 # Installation
- 1. Copy the makeReseedQbittorrent.sh to a place that won't change and is accesible to your qBittorrent install.
- 2. Go to Tools->Preferences->Downloads-> select/enable Run External Program On Torrent Completion and enter the
-    path to where you placed the makeReseedQbittorrent.sh 
-select the file makeDirectoryForSeed.sh
+ 1. Copy the makeReseedQbittorrent.sh and qbittorrent-reseeder.sh to a place that won't change and is accesible to your qBittorrent install.
+ 2. Go to Tools->Preferences->Downloads-> select/enable Run External Program On Torrent Completion and enter sh 
+    followed by the path to where you placed the makeReseedQbittorrent.sh and "%N" "%D" "%R" "%I" "%F" %C.
+    ex: sh /home/yourUserName/Documents/makeReseedQbittorrent.sh "%N" "%D" "%R" "%I" "%F" %C
+ 3. Go to Tools->Preferences->Downloads-> select either Copy .torrent files to: OR Copy .torrent files for completed
+    torrents to:  and select a path to where you want your to store you torrents.
+    ex: /home/yourUserName/Documents/TORRENT_STORE
+    ** Remember this location you will have to enter the path into makeReseedQbittorrent.sh
+ 4. Open the makeReseedQbittorrent.sh file in your editir of choice and look for the USER entered variables section.
+    Enter username and password if desired and host IP and port if you changed them within the client.
+    
+    That is it. now when a torrent completes, it will be ready for reseeding and automated location management.
 
-For the reseeder 
-Paste the contents of the reseeder to somewhere. Make the file executable. and run it via a terminal
-ex: [user@hostname Downloads]$ ./reseeder
+# Usage
+  A single .magnetLINKqbottorrent file can run from terminal with:
+  [userName@hostname ~]$ sh NameOfTorrent.magnetLINKqbitorrent localhost 8080
+  this only works for your local instance of qbittorret. Use qbittorrent-reseeder for more complex cases 
+
+# For qbittorrent-reseeder 
+  Via the termina, navigate to where you placed qbittorrent-reseeder and run it via
+ex: [user@hostname Documents]$ sh ./qbittorrent-reseeder
+ follow the prompts and enter where you want to search for content to be processed.
+ HINT: after reorganizing your content ie: moving folders around to different drives or catagorizing your stuff in folders
+  run the qbittorrent-reseeder to reconnect all your torrent in the clent with their current location.
