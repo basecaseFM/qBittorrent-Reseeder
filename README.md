@@ -21,7 +21,7 @@ feel free to make requests for features or report bugs...im just doing this for 
  1. Copy the makeReseedQbittorrent.sh and qbittorrent-reseeder.sh to a place that won't change and is accesible to your qBittorrent install.
  2. Go to Tools->Preferences->Downloads-> select/enable Run External Program On Torrent Completion and enter sh 
     followed by the path to where you placed the makeReseedQbittorrent.sh and "%N" "%D" "%R" "%I" "%F" %C.
-    ex: sh /home/yourUserName/Documents/makeReseedQbittorrent.sh "%N" "%D" "%R" "%I" "%F" %C
+               ex: sh /home/yourUserName/Documents/makeReseedQbittorrent.sh "%N" "%D" "%R" "%I" "%F" %C
  3. Go to Tools->Preferences->Downloads-> select either Copy .torrent files to: OR Copy .torrent files for completed
     torrents to:  and select a path to where you want your to store you torrents.
     ex: /home/yourUserName/Documents/TORRENT_STORE
@@ -33,7 +33,7 @@ feel free to make requests for features or report bugs...im just doing this for 
 
 # Usage
   A single .magnetLINKqbottorrent file can run from terminal with:
-  [userName@hostname ~]$ sh NameOfTorrent.magnetLINKqbitorrent localhost 8080
+  [userName@hostname ~]$ sh NameOfTorrent.magnetLINKqbittorrent localhost 8080
   this only works for your local instance of qbittorret. Use qbittorrent-reseeder for more complex cases 
 
 # For qbittorrent-reseeder 
