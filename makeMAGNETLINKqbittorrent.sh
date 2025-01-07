@@ -102,5 +102,5 @@ EOL
 	cookie_hash=$((curl -i --header "Referer: http://$QBT_HOST_IP:$QBT_HOST_PORT" --data-urlencode "username=$QBT_USERNAME" --data-urlencode "password=$QBT_PASSWORD" http://$QBT_HOST_IP:$QBT_HOST_PORT/api/v2/auth/login | grep "set-cookie:" | cut -d';' -f1 | cut -d':' -f2) 2>&1)  
 	cookie_hash=${cookie_hash##* }
 	echo "Cookie hash is: " $cookie_hash
-	curl -X POST --cookie "$cookie_hash" --data "hashes=$QBT_INFOHASH" --data-urlencode "location=$NEW_DIR" http://$QBT_HOST_IP:$QBT_HOST_PORT/api/v2/torrents/setLocation  2&>> /home/bscs/eclipse-workspace/qbittorent-reseeder/log
-echo $name" placed its own folder for easy seeding"
+	curl -X POST --cookie "$cookie_hash" --data "hashes=$QBT_INFOHASH" --data-urlencode "location=$NEW_DIR" http://$QBT_HOST_IP:$QBT_HOST_PORT/api/v2/torrents/setLocation 
+ echo $name" placed its own folder for easy seeding"
